@@ -1,0 +1,96 @@
+.p-sectionLanding
+  position: relative
+  text-align: center
+  z-index: 100
+
+  &__title
+    +font-size(72)
+    +line-height(72)
+    font-family: var(--font-secondary)
+
+    &__txt
+      &:first-child,
+      &:nth-child(2)
+        left: 50%
+        opacity: .2
+        position: absolute
+        transform: translateX(-50%)
+
+      &:first-child
+        color: blue
+
+      &:nth-child(2)
+        color: red
+
+      &:last-child
+        position: relative
+
+  &__txt
+    +font-size(30)
+    +line-height(30)
+
+    &--alt
+      position: relative
+
+      &::after
+        background-color: var(--color-text)
+        border-radius: 5px
+        bottom: 6px
+        content: ''
+        height: 2px
+        left: 0
+        position: absolute
+        width: 100%
+
+  &__cta
+    all: unset
+    +margin-top(20)
+    cursor: pointer
+    $parent: &
+
+    &:hover
+      #{$parent}__img__arrow
+        transform: translate(-50%, 0)
+
+      #{$parent}__img__arrow__tip
+        fill: red;
+
+      #{$parent}__txt
+        span
+          color: red
+          animation: 1s bounce infinite
+
+          @for $i from 0 through 10
+            &:nth-child(#{($i + 1)})
+              animation-delay: $i * .05s
+
+    &__txt
+      font-family: var(--font-secondary)
+      font-size: 36px
+
+      span
+        display: inline-block
+        transition: color .1s linear
+        +stagger-transitions(10, 1, 11)
+
+    &__img
+      height: 60px
+
+      &__bow,
+      &__arrow
+        left: 50%
+        position: absolute
+
+      &__bow
+        width: 80px
+        transform: translate(-50%, 200%)
+
+      &__arrow
+        height: 60px
+        transform: translate(-50%, 5px)
+        transition: transform .5s cubic-bezier(.81, .55, .77, 1.29)
+
+        &__tip
+          fill: rgba(0, 0, 0, 0)
+          transition: fill .5s cubic-bezier(.81, .55, .77, 1.29)
+

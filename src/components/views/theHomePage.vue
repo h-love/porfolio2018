@@ -1,10 +1,10 @@
 <template>
   <div class="theHomePage">
-    <div class="theHomePage-bkg">
+    <div class="o-bkg">
       <div class="sketch p5" id="sketch"></div>
       <texture-noise></texture-noise>
     </div>
-    <section class="theHomePage-section">
+    <section class="o-section--centeredBoth">
       <section-landing></section-landing>
     </section>
   </div>
