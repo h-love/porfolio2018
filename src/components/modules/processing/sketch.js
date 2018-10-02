@@ -6,13 +6,14 @@ export default (sketch) => {
   let posY = null;
 
   class Rect {
-    constructor(_x, _y, _width, _height, _orientation, _direction, _color) {
+    constructor(_x, _y, _width, _height, _orientation, _direction, _rotationSPeed, _color) {
       this.x = _x;
       this.y = _y;
       this.width = _width;
       this.height = _height;
       this.orientation = _orientation;
       this.direction = _direction;
+      this.rotationSpeed = _rotationSPeed;
       this.color = _color;
     }
 
@@ -20,7 +21,7 @@ export default (sketch) => {
       if (this.orientation >= 360) {
         this.orientation = 0;
       } else {
-        this.orientation += 0.125 * this.direction;
+        this.orientation += this.rotationSpeed * this.direction;
       }
     }
 
@@ -61,6 +62,7 @@ export default (sketch) => {
           height / 2,
           sketch.random(0, 360),
           item % 2 === 0 ? -1 : 1,
+          0.25,
           item % 2 === 0 ? sketch.color(255, 0, 0, 5) : sketch.color(0, 0, 255, 5),
         );
         x += (width / itemPerLine) + ((width / itemPerLine) / itemPerLine);

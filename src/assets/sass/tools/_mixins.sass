@@ -12,5 +12,5 @@
 
 =stagger-transitions($interval, $min, $max)
   @for $i from $min through $max
-    &:nth-of-type(#{$i})
-      transition-delay: #{$interval * $i}ms
+    &:nth-of-type(#{$i + 1})
+      transition-delay: #{$interval * $i}s

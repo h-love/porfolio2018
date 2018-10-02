@@ -18,6 +18,8 @@
  * Generic
  */
 @import "~normalize.scss/normalize.scss";
+@import "~foundation-sites/scss/foundation";
+@include foundation-xy-grid-classes;
 
 /**
  * Elements
@@ -34,7 +36,10 @@
  */
 @import "/components/p5/p5";
 
+@import "/components/cards/cardProject";
+
 @import "/components/sections/sectionLanding";
+@import "/components/sections/sectionProjects";
 
 @import "/components/texture/textureNoise";
 
@@ -42,6 +47,7 @@
  * Utils
  */
 @import "/utils/utils";
+@include foundation-flex-classes
 
 
 
