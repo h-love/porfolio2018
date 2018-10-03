@@ -17,7 +17,7 @@
 import P5 from 'p5';
 import sketch from '@/components/modules/processing/sketch';
 import SectionLanding from '@/components/modules/sections/SectionLanding';
-import SectionProjects from '@/components/modules/sections/SectionProjects';
+import SectionProjects from '@/components/modules/sections/SectionProjects'; // eslint-disable-line import/no-unresolved
 import TextureNoise from '@/components/modules/textures/TextureNoise';
 
 export default {

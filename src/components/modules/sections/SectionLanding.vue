@@ -57,16 +57,15 @@ export default {
       } else {
         this.$refs.arrow.classList.remove('active');
       }
-      const opacity = this.mapRange(window.scrollY, 0, window.innerHeight, 1, 0);
-      this.$refs.arrow.style.opacity = opacity;
+      // const opacity = this.mapRange(window.scrollY, 0, window.innerHeight, 1, 0);
+      // this.$refs.arrow.style.opacity = opacity;
     },
     mapRange(value, low1, high1, low2, high2) {
       return low2 + (((high2 - low2) * (value - low1)) / (high1 - low1));
     },
     scrollToProjects() {
-      document.body.style.overflowY = 'overlay';
       window.scroll({
-        top: window.innerHeight,
+        top: window.innerHeight - 90,
         left: 0,
         behavior: 'smooth',
       });

@@ -2,17 +2,37 @@
     "projects": [
         {
             "id": 1,
-            "title": "Apprentice god",
+            "image": "cardProject/apprentice_god_projectCard.mp4",
+            "title": "Apprentice\u0020god",
             "subtitle": "interactive_movie",
-            "year": 2018,
+            "year": "2018",
             "type": "school",
             "techno": "VueJS"
         },
         {
             "id": 2,
-            "title": "Apprentice god",
+            "image": "cardProject/apprentice_god_projectCard.mp4",
+            "title": "Apprentice\u0020god",
             "subtitle": "interactive_movie",
-            "year": 2018,
+            "year": "2018",
+            "type": "school",
+            "techno": "VueJS"
+        },
+        {
+            "id": 3,
+            "image": "cardProject/apprentice_god_projectCard.mp4",
+            "title": "Apprentice\u0020god",
+            "subtitle": "interactive_movie",
+            "year": "2018",
+            "type": "school",
+            "techno": "VueJS"
+        },
+        {
+            "id": 4,
+            "image": "cardProject/apprentice_god_projectCard.mp4",
+            "title": "Apprentice\u0020bod",
+            "subtitle": "interactive_movie",
+            "year": "2018",
             "type": "school",
             "techno": "VueJS"
         }
