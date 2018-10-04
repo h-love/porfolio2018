@@ -1,6 +1,6 @@
 <template>
   <div class="p-cardProject" ref="card">
-    <video class="p-cardProject__video" ref="video" :src="imagePath" loop></video>
+    <video class="p-cardProject__video" ref="video" :src="imagePath" loop muted></video>
     <div class="p-cardProject__filter"></div>
     <div class="p-cardProject__content" ref="cardContent">
       <h2 class="p-cardProject__content__title u-noMargin">

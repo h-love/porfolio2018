@@ -2,8 +2,11 @@ export default (sketch) => {
   let width = 0;
   let height = 0;
   let rects = null;
+  let rectsEnd = null;
   let posX = null;
   let posY = null;
+  const ScrollBegin = document.body.clientHeight - (2 * window.innerHeight);
+  const ScrollEnd = document.body.clientHeight - window.innerHeight;
 
   class Rect {
     constructor(_x, _y, _width, _height, _orientation, _direction, _rotationSPeed, _color) {
@@ -23,6 +26,10 @@ export default (sketch) => {
       } else {
         this.orientation += this.rotationSpeed * this.direction;
       }
+    }
+
+    updateColorAlpha = (_alpha) => {
+      this.color.setAlpha(_alpha);
     }
 
     updatePosition = (_x, _y) => {
@@ -47,6 +54,7 @@ export default (sketch) => {
     height = document.getElementById('sketch').clientHeight;
     sketch.createCanvas(width, height);
     rects = [];
+    rectsEnd = [];
     posX = [];
     posY = [];
     let x = 0;
@@ -55,6 +63,16 @@ export default (sketch) => {
     const itemPerLine = 6;
     for (let i = 0; i < itemPerLine; i += 1) {
       for (let j = 0; j < itemPerLine; j += 1) {
+        rectsEnd[item] = new Rect(
+          width / 2,
+          height / 2,
+          width / 2,
+          height / 2,
+          sketch.random(0, 360),
+          item % 2 === 0 ? -1 : 1,
+          0.25,
+          item % 2 === 0 ? sketch.color(255, 0, 0, 0) : sketch.color(0, 0, 255, 0),
+        );
         rects[item] = new Rect(
           x,
           y,
@@ -80,6 +98,11 @@ export default (sketch) => {
     for (let i = 0; i < rects.length; i += 1) {
       rects[i].update();
       rects[i].display();
+      if (scrollY > ScrollBegin) {
+        rectsEnd[i].updateColorAlpha(sketch.map(scrollY, ScrollBegin, ScrollEnd, 0, 5));
+        rectsEnd[i].update();
+        rectsEnd[i].display();
+      }
     }
   };
 
