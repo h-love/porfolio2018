@@ -9,11 +9,11 @@
       <span class="p-sectionLanding__txt--alt">creative engineer</span>
       since 2018
     </div>
-    <div class="p-sectionLanding__txt u-noMargin">loving universe since 1995</div>
-    <div class="p-sectionLanding__txt u-noMargin">
+    <div class="p-sectionLanding__txt">loving universe since 1995</div>
+    <div class="p-sectionLanding__txt">
       <span class="p-sectionLanding__txt--alt">front-end web dev.lover</span>
     </div>
-    <div class="p-sectionLanding__txt u-noMargin">
+    <div class="p-sectionLanding__txt">
       playing in
       <span class="p-sectionLanding__txt--alt">Paris</span>
     </div>
@@ -33,6 +33,8 @@
   </div>
 </template>
 <script>
+import utils from '@/assets/js/utils';
+
 export default {
   name: 'SectionLanding',
   mounted() {
@@ -43,25 +45,22 @@ export default {
     handleMouseMove(event) {
       const elements = document.getElementsByClassName('js-movingTitle');
 
-      const valueX0 = this.mapRange(event.clientX, 0, window.innerWidth, 45, 55);
-      const valueX1 = this.mapRange(event.clientX, 0, window.innerWidth, 55, 45);
-      const valueY0 = this.mapRange(event.clientY, 0, window.innerHeight, -20, 20);
-      const valueY1 = this.mapRange(event.clientY, 0, window.innerHeight, 20, -20);
+      const valueX0 = utils.mapRange(event.clientX, 0, window.innerWidth, 45, 55);
+      const valueX1 = utils.mapRange(event.clientX, 0, window.innerWidth, 55, 45);
+      const valueY0 = utils.mapRange(event.clientY, 0, window.innerHeight, -20, 20);
+      const valueY1 = utils.mapRange(event.clientY, 0, window.innerHeight, 20, -20);
 
       elements[0].style.transform = `translate(-${valueX0}%, ${valueY0}%)`;
       elements[1].style.transform = `translate(-${valueX1}%, ${valueY1}%)`;
     },
     handleScroll() {
       if (scrollY) {
-        const valueY = this.mapRange(scrollY, 0, document.body.clientHeight, 5, -300);
+        const valueY = utils.mapRange(scrollY, 0, document.body.clientHeight, 5, -300);
         this.$refs.arrow.classList.add('active');
         this.$refs.arrow.style.transform = `translate(-50%, ${valueY}px)`;
       } else {
         this.$refs.arrow.classList.remove('active');
       }
-    },
-    mapRange(value, low1, high1, low2, high2) {
-      return low2 + (((high2 - low2) * (value - low1)) / (high1 - low1));
     },
     scrollToProjects() {
       window.scroll({

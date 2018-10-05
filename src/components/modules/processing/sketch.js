@@ -1,12 +1,54 @@
 export default (sketch) => {
   let width = 0;
   let height = 0;
-  let rects = null;
-  let rectsEnd = null;
+  let rects = [];
+  let rectsEnd = [];
+  const stars = [];
   let posX = null;
   let posY = null;
   const ScrollBegin = document.body.clientHeight - (2 * window.innerHeight);
   const ScrollEnd = document.body.clientHeight - window.innerHeight;
+
+  class Star {
+    constructor(_x, _y, _z, _color) {
+      this.x = _x;
+      this.y = _y;
+      this.z = _z;
+      this.color = _color;
+      this.pz = _z;
+    }
+
+    updateColorAlpha = (_alpha) => {
+      this.color.setAlpha(_alpha);
+    }
+
+    update = () => {
+      this.z -= 10;
+      if (this.z < 1) {
+        this.z = width;
+        this.pz = this.z;
+      }
+    }
+
+    display = () => {
+      sketch.fill(this.color);
+      sketch.noStroke();
+
+      sketch.push();
+      sketch.translate(width / 2, height / 2);
+      const sx = sketch.map(this.x / this.z, 0, 1, 0, width);
+      const sy = sketch.map(this.y / this.z, 0, 1, 0, height);
+      const r = sketch.map(this.z, 0, width, 16, 0);
+      sketch.ellipse(sx, sy, r, r);
+
+      const px = sketch.map(this.x / this.pz, 0, 1, 0, width);
+      const py = sketch.map(this.y / this.pz, 0, 1, 0, height);
+      this.color.setAlpha(sketch.map(this.z, 0, width, 0, 100));
+      sketch.stroke(this.color);
+      sketch.line(px, py, sx, sy);
+      sketch.pop();
+    }
+  }
 
   class Rect {
     constructor(_x, _y, _width, _height, _orientation, _direction, _rotationSPeed, _color) {
@@ -61,18 +103,31 @@ export default (sketch) => {
     let y = 0;
     let item = 0;
     const itemPerLine = 6;
+
+    for (let i = 0; i < 100; i += 1) {
+      stars[i] = new Star(
+        sketch.random(-width, width),
+        sketch.random(-height, height),
+        sketch.random(width),
+        sketch.color(sketch.random(0, 255), sketch.random(0, 255), sketch.random(0, 255), 0),
+      );
+    }
+
+    for (let i = 0; i < 10; i += 1) {
+      rectsEnd[i] = new Rect(
+        width / 2,
+        height / 2,
+        width / 2,
+        height / 2,
+        sketch.random(0, 360),
+        i % 2 === 0 ? -1 : 1,
+        0.25,
+        i % 2 === 0 ? sketch.color(255, 0, 0, 0) : sketch.color(0, 0, 255, 0),
+      );
+    }
+
     for (let i = 0; i < itemPerLine; i += 1) {
       for (let j = 0; j < itemPerLine; j += 1) {
-        rectsEnd[item] = new Rect(
-          width / 2,
-          height / 2,
-          width / 2,
-          height / 2,
-          sketch.random(0, 360),
-          item % 2 === 0 ? -1 : 1,
-          0.25,
-          item % 2 === 0 ? sketch.color(255, 0, 0, 0) : sketch.color(0, 0, 255, 0),
-        );
         rects[item] = new Rect(
           x,
           y,
@@ -98,10 +153,18 @@ export default (sketch) => {
     for (let i = 0; i < rects.length; i += 1) {
       rects[i].update();
       rects[i].display();
-      if (scrollY > ScrollBegin) {
-        rectsEnd[i].updateColorAlpha(sketch.map(scrollY, ScrollBegin, ScrollEnd, 0, 5));
+    }
+
+    if (scrollY > ScrollBegin) {
+      for (let i = 0; i < rectsEnd.length; i += 1) {
+        rectsEnd[i].updateColorAlpha(sketch.map(scrollY, ScrollBegin, ScrollEnd, 0, 10));
         rectsEnd[i].update();
         rectsEnd[i].display();
+      }
+      for (let i = 0; i < stars.length; i += 1) {
+        stars[i].updateColorAlpha(sketch.map(scrollY, ScrollBegin, ScrollEnd, 0, 100));
+        stars[i].update();
+        stars[i].display();
       }
     }
   };
