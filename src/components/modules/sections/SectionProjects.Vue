@@ -6,6 +6,7 @@
            class="cell large-5 medium-7 small-12">
         <card-project
           :image-bkg="project.image"
+          :project-link="project.link"
           :project-title="project.title"
           :project-subtitle="project.subtitle"
           :project-year="project.year"

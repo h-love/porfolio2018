@@ -2,6 +2,7 @@
     "projects": [
         {
             "id": 1,
+            "link": "testA",
             "image": "cardProject/apprentice_god_projectCard.mp4",
             "title": "Apprentice\u0020god",
             "subtitle": "interactive_movie",
@@ -11,6 +12,7 @@
         },
         {
             "id": 2,
+            "link": "testB",
             "image": "cardProject/apprentice_god_projectCard.mp4",
             "title": "Apprentice\u0020god",
             "subtitle": "interactive_movie",
@@ -20,6 +22,7 @@
         },
         {
             "id": 3,
+            "link": "testC",
             "image": "cardProject/apprentice_god_projectCard.mp4",
             "title": "Apprentice\u0020god",
             "subtitle": "interactive_movie",
@@ -29,6 +32,7 @@
         },
         {
             "id": 4,
+            "link": "testD",
             "image": "cardProject/apprentice_god_projectCard.mp4",
             "title": "Apprentice\u0020bod",
             "subtitle": "interactive_movie",

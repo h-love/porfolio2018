@@ -5,6 +5,7 @@
         <div class="sketch p5" id="sketch"></div>
         <texture-noise></texture-noise>
       </div>
+      <div class="o-transition o-transition--right"></div>
       <section class="o-section--centeredBoth">
         <section-landing></section-landing>
       </section>
@@ -46,6 +47,9 @@ export default {
   },
   mounted() {
     this.myp5 = new P5(sketch, document.getElementById('sketch'));
+  },
+  destroyed() {
+    this.myp5.remove();
   },
 };
 </script>

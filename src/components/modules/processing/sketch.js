@@ -23,9 +23,11 @@ export default (sketch) => {
     }
 
     update = () => {
-      this.z -= 10;
+      this.z -= 100;
       if (this.z < 1) {
-        this.z = width;
+        this.x = sketch.random(-width, width);
+        this.y = sketch.random(-height, height);
+        this.z = sketch.random(width);
         this.pz = this.z;
       }
     }
@@ -38,8 +40,7 @@ export default (sketch) => {
       sketch.translate(width / 2, height / 2);
       const sx = sketch.map(this.x / this.z, 0, 1, 0, width);
       const sy = sketch.map(this.y / this.z, 0, 1, 0, height);
-      const r = sketch.map(this.z, 0, width, 16, 0);
-      sketch.ellipse(sx, sy, r, r);
+      sketch.ellipse(sx, sy, 1, 1);
 
       const px = sketch.map(this.x / this.pz, 0, 1, 0, width);
       const py = sketch.map(this.y / this.pz, 0, 1, 0, height);
@@ -104,12 +105,12 @@ export default (sketch) => {
     let item = 0;
     const itemPerLine = 6;
 
-    for (let i = 0; i < 100; i += 1) {
+    for (let i = 0; i < 200; i += 1) {
       stars[i] = new Star(
         sketch.random(-width, width),
         sketch.random(-height, height),
         sketch.random(width),
-        sketch.color(sketch.random(0, 255), sketch.random(0, 255), sketch.random(0, 255), 0),
+        i % 2 === 0 ? sketch.color(255, 0, 0, 0) : sketch.color(0, 0, 255, 0),
       );
     }
 

@@ -1,19 +1,21 @@
 <template>
   <div class="p-cardProject" ref="card">
-    <video class="p-cardProject__video" ref="video" :src="imagePath" loop muted></video>
-    <div class="p-cardProject__filter"></div>
-    <div class="p-cardProject__content" ref="cardContent">
-      <h2 class="p-cardProject__content__title u-noMargin">
-        <span v-for="(letter, index) in projectTitle" :key="index">
-          <div v-if="letter === '\u0020'">&nbsp;</div>
-          {{letter}}
-        </span>
-      </h2>
-      <div class="p-cardProject__content__subtitle">{{projectSubtitle}}</div>
-      <div class="p-cardProject__content__meta">
-        {{projectYear}}.{{projectType}}.{{projectTechno}}
+    <router-link :to="'/project/' + projectLink">
+      <video class="p-cardProject__video" ref="video" :src="imagePath" loop muted></video>
+      <div class="p-cardProject__filter"></div>
+      <div class="p-cardProject__content" ref="cardContent">
+        <h2 class="p-cardProject__content__title u-noMargin">
+          <span v-for="(letter, index) in projectTitle" :key="index">
+            <div v-if="letter === '\u0020'">&nbsp;</div>
+            {{letter}}
+          </span>
+        </h2>
+        <div class="p-cardProject__content__subtitle">{{projectSubtitle}}</div>
+        <div class="p-cardProject__content__meta">
+          {{projectYear}}.{{projectType}}.{{projectTechno}}
+        </div>
       </div>
-    </div>
+    </router-link>
   </div>
 </template>
 <script>
@@ -21,6 +23,7 @@ export default {
   name: 'CardProject',
   props: {
     imageBkg: String,
+    projectLink: String,
     projectTitle: String,
     projectSubtitle: String,
     projectYear: String,
@@ -66,6 +69,12 @@ export default {
       this.$refs.video.currentTime = 0;
       clearInterval(this.interval);
     },
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.handleResize, false);
+    this.$refs.card.removeEventListener('mouseenter', this.handleMouseenter, false);
+    this.$refs.card.removeEventListener('mouseleave', this.handleMouseleave, false);
+    clearInterval(this.interval);
   },
 };
 </script>

@@ -4,3 +4,52 @@
 
   50%
     transform: translateY(-2px)
+
+.slide-from-right-enter,
+.slide-from-right-leave-to
+  .o-transition--right,
+  .o-transition--left
+    transform: translateX(0)
+
+.slide-from-left-enter,
+.slide-from-left-leave-to
+  .o-transition--right,
+  .o-transition--left
+    transform: translateX(0)
+
+.slide-from-right-enter-to
+  .o-transition--right,
+  .o-transition--left
+    transform: translateX(100%)
+
+.slide-from-left-enter-to
+  .o-transition--right,
+  .o-transition--left
+    transform: translateX(-100%)
+
+.slide-from-right-leave
+  .o-transition--right
+    transform: translateX(100%)
+
+  .o-transition--left
+    transform: translateX(-100%)
+
+.slide-from-left-leave
+  .o-transition--right
+    transform: translateX(-100%)
+
+  .o-transition--left
+    transform: translateX(100%)
+
+
+.slide-from-right-enter-active,
+.slide-from-right-leave-active,
+.slide-from-left-enter-active,
+.slide-from-left-leave-active
+  transition-duration: .2s
+
+  .o-transition--right,
+  .o-transition--left
+    transition: transform .2s ease-out
+
+

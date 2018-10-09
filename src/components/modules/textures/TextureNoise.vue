@@ -65,6 +65,7 @@ const noise = () => {
   // Init
   const init = (() => { // eslint-disable-line no-unused-vars
     canvasbody = document.getElementById('noise');
+    ctx = null;
     ctx = canvasbody.getContext('2d');
     setup();
   })();

@@ -37,9 +37,20 @@ import utils from '@/assets/js/utils';
 
 export default {
   name: 'SectionLanding',
+  data() {
+    return {
+      firstArrowPosition: 0,
+    };
+  },
   mounted() {
     window.addEventListener('mousemove', this.handleMouseMove, false);
     window.addEventListener('scroll', this.handleScroll, false);
+    const element = this.$refs.arrow.getBoundingClientRect();
+    this.firstArrowPosition = (
+      -element.y
+      - ((3 * element.height) / 2)
+      - (element.height / 2))
+      + (window.innerHeight / 2);
   },
   methods: {
     handleMouseMove(event) {
@@ -55,7 +66,13 @@ export default {
     },
     handleScroll() {
       if (scrollY) {
-        const valueY = utils.mapRange(scrollY, 0, document.body.clientHeight, 5, -300);
+        const valueY = utils.mapRange(
+          scrollY,
+          0,
+          document.body.clientHeight,
+          5,
+          this.firstArrowPosition,
+        );
         this.$refs.arrow.classList.add('active');
         this.$refs.arrow.style.transform = `translate(-50%, ${valueY}px)`;
       } else {
@@ -69,6 +86,10 @@ export default {
         behavior: 'smooth',
       });
     },
+  },
+  destroyed() {
+    window.removeEventListener('mousemove', this.handleMouseMove, false);
+    window.removeEventListener('scroll', this.handleScroll, false);
   },
 };
 </script>
