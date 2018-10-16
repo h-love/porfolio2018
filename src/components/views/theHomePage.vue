@@ -1,5 +1,5 @@
 <template>
-  <div class="theHomePage">
+  <div class="theHomePage test">
     <div class="grid-container">
       <div class="o-bkg">
         <div class="sketch p5" id="sketch"></div>
