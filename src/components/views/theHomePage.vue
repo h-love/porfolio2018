@@ -25,10 +25,10 @@
 <script>
 import P5 from 'p5';
 import sketch from '@/components/modules/processing/sketch';
-import SectionEnd from '@/components/modules/sections/SectionEnd'; // eslint-disable-line import/no-unresolved
+import SectionEnd from '@/components/modules/sections/SectionEnd';
 import SectionHenri from '@/components/modules/sections/SectionHenri';
 import SectionLanding from '@/components/modules/sections/SectionLanding';
-import SectionProjects from '@/components/modules/sections/SectionProjects'; // eslint-disable-line import/no-unresolved
+import SectionProjects from '@/components/modules/sections/SectionProjects';
 import TextureNoise from '@/components/modules/textures/TextureNoise';
 
 export default {
