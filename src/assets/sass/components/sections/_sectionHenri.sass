@@ -10,6 +10,25 @@
       font-family: var(--font-secondary)
       width: 310px
 
+    &__paragraph
+      +font-size(30)
+      +line-height(30)
+
+      a
+        color: $black
+        text-decoration: none
+        position: relative
+
+        &::after
+          background-color: var(--color-text)
+          border-radius: 5px
+          bottom: 6px
+          content: ''
+          height: 2px
+          left: 0
+          position: absolute
+          width: 100%
+
   &__img
     width: 100%
     border-radius: 5px

@@ -1,0 +1,59 @@
+.p-sectionProjectFooter
+  position: fixed
+  bottom: 0
+  left: 0
+  z-index: -1
+  height: 50vh
+  width: 100vw
+  background-color: $pink
+
+  &__link
+    $parent: &
+    text-decoration: none
+    color: var(--color-text)
+    margin-top: 50px
+
+    &:hover
+      #{$parent}__title
+        span
+          animation: .5s bounce infinite
+          @for $i from 0 through 20
+            &:nth-child(#{$i+1})
+              animation-delay: $i * .02s
+
+    &__next
+      +font-size(18)
+      +line-height(18)
+
+    &__title
+      +font-size(36)
+      +line-height(36)
+      font-family: var(--font-secondary)
+
+      span
+        display: inline-block
+
+  &__back
+    +font-size(18)
+    position: absolute
+    left: 50%
+    bottom: 20px
+    color: var(--color-text)
+    text-decoration: none
+    transform: translateX(-50%)
+
+    &::after
+      background-color: var(--color-text)
+      border-radius: 5px
+      bottom: 5px
+      content: ''
+      height: 1px
+      right: 0
+      position: absolute
+      width: 0
+      transition: width .2s ease-out 
+
+    &:hover
+      &::after
+        left: 0
+        width: 100%

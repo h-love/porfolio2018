@@ -8,37 +8,137 @@
             "subtitle": "interactive_movie",
             "year": "2018",
             "type": "school",
-            "techno": "VueJS"
+            "techno": "VueJS",
+            "client": "IMAC Engineering School",
+            "headerImg": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
+            "description": [
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            ],
+            "linkToProject": "http://google.fr",
+            "linkToPreviousProject": "testD",
+            "previousProject": "AFI's\u0020top\u0020100",
+            "linkToNextProject": "testB",
+            "nextProject": "Cheval\u0020de\u0020Troie",
+            "pictures": [
+                {
+                    "src": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
+                    "text": "test"
+                },
+                {
+                    "src": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
+                    "text": "test"
+                },
+                {
+                    "src": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
+                    "text": "test"
+                }
+            ]
         },
         {
             "id": 2,
             "link": "testB",
-            "image": "cardProject/apprentice_god_projectCard.mp4",
-            "title": "Apprentice\u0020god",
-            "subtitle": "interactive_movie",
-            "year": "2018",
-            "type": "school",
-            "techno": "VueJS"
+            "image": "cardProject/chevaldetroie_projectCard.mp4",
+            "title": "Cheval\u0020de\u0020Troie",
+            "subtitle": "agency_website",
+            "year": "2017",
+            "type": "internship",
+            "techno": "VueJS",
+            "client": "Cheval de Troie",
+            "headerImg": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
+            "description": [
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            ],
+            "linkToProject": "http://google.fr",
+            "linkToPreviousProject": "testA",
+            "previousProject": "Apprentice\u0020god",
+            "linkToNextProject": "testC",
+            "nextProject": "IMAC\u0020logo",
+            "pictures": [
+                {
+                    "src": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
+                    "text": "test"
+                },
+                {
+                    "src": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
+                    "text": "test"
+                },
+                {
+                    "src": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
+                    "text": "test"
+                }
+            ]
         },
         {
             "id": 3,
             "link": "testC",
-            "image": "cardProject/apprentice_god_projectCard.mp4",
-            "title": "Apprentice\u0020god",
-            "subtitle": "interactive_movie",
-            "year": "2018",
+            "image": "cardProject/imac_projectCard.mp4",
+            "title": "IMAC\u0020logo",
+            "subtitle": "procedural_logo",
+            "year": "2017",
             "type": "school",
-            "techno": "VueJS"
+            "techno": "Processing",
+            "client": "IMAC Engineering School",
+            "headerImg": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
+            "description": [
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            ],
+            "linkToProject": "http://google.fr",
+            "linkToPreviousProject": "testB",
+            "previousProject": "Cheval\u0020de\u0020Troie",
+            "linkToNextProject": "testD",
+            "nextProject": "AFI's\u0020top\u0020100",
+            "pictures": [
+                {
+                    "src": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
+                    "text": "test"
+                },
+                {
+                    "src": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
+                    "text": "test"
+                },
+                {
+                    "src": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
+                    "text": "test"
+                }
+            ]
         },
         {
             "id": 4,
             "link": "testD",
-            "image": "cardProject/apprentice_god_projectCard.mp4",
-            "title": "Apprentice\u0020bod",
-            "subtitle": "interactive_movie",
+            "image": "cardProject/afi_projectCard.mp4",
+            "title": "AFI's\u0020top\u0020100",
+            "subtitle": "website",
             "year": "2018",
             "type": "school",
-            "techno": "VueJS"
+            "techno": "VueJS",
+            "client": "My heart",
+            "headerImg": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
+            "description": [
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            ],
+            "linkToProject": "http://google.fr",
+            "linkToPreviousProject": "testC",
+            "previousProject": "IMAC\u0020logo",
+            "linkToNextProject": "testA",
+            "nextProject": "Apprentice\u0020god",
+            "pictures": [
+                {
+                    "src": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
+                    "text": "test"
+                },
+                {
+                    "src": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
+                    "text": "test"
+                },
+                {
+                    "src": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
+                    "text": "test"
+                }
+            ]
         }
     ]
 }

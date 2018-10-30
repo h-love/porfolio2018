@@ -1,5 +1,5 @@
 <template>
-  <div class="p-cardProject" ref="card">
+  <div class="p-cardProject" ref="card" @click="scrollUnset()">
     <router-link :to="'/project/' + projectLink">
       <video class="p-cardProject__video" ref="video" :src="imagePath" loop muted></video>
       <div class="p-cardProject__filter"></div>
@@ -68,6 +68,9 @@ export default {
       this.$refs.video.pause();
       this.$refs.video.currentTime = 0;
       clearInterval(this.interval);
+    },
+    scrollUnset() {
+      document.documentElement.style.scrollBehavior = 'unset';
     },
   },
   beforeDestroy() {

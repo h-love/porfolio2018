@@ -4,9 +4,7 @@
       <div class="cell small-5" ref="textBlock">
         <div class="p-sectionHenri__text" v-for="bloc in henriData.bloc" :key="bloc.id">
           <h2 class="p-sectionHenri__text__title u-noMargin">{{bloc.title}}</h2>
-          <div>
-            {{bloc.text}}
-          </div>
+          <div v-html="bloc.text" class="p-sectionHenri__text__paragraph"></div>
         </div>
       </div>
       <div class="cell small-5">
@@ -41,13 +39,11 @@ export default {
       const element = this.$refs.picture;
       const elementPosition = element.getBoundingClientRect().top;
       element.style.filter = `
-        hue-rotate(${utils.mapRange(scrollY, textBlockTop, textBlockBottom, 0, 360)}deg)
-        grayscale(${utils.mapRange(scrollY, textBlockTop, textBlockBottom, 100, 0)}%)
-      `;
+        hue-rotate(${utils.mapRange(scrollY, textBlockTop, textBlockBottom, 0, 360)}deg)`;
 
       if (elementPosition <= 0) {
         element.style.position = 'sticky';
-        element.style.top = '15px';
+        element.style.top = '60px';
       }
     },
   },

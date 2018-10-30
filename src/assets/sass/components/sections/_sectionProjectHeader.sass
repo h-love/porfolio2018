@@ -1,0 +1,35 @@
+.p-sectionProjectHeader
+  position: fixed
+  top: 0
+  left: 0
+  z-index: -1
+  height: 50vh
+  width: 100vw
+  background-size: cover
+  background-position: center
+
+  &__back
+    position: absolute
+    left: 20px
+    top: 20px
+    color: var(--color-text)
+    text-decoration: none
+
+    &::after
+      background-color: var(--color-text)
+      border-radius: 5px
+      bottom: 5px
+      content: ''
+      height: 1px
+      left: 0
+      position: absolute
+      width: 100%
+
+  &__title
+    +font-size(72)
+    +line-height(72)
+    font-family: var(--font-secondary)
+  
+  &__subtitle
+    +font-size(36)
+    +line-height(36)

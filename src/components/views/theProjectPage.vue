@@ -1,21 +1,54 @@
 <template>
   <div class="theProjectPage">
-    <div class="grid-container">
-      <div
-        class="o-transition o-transition--left"
-        ref="transition"
-      ></div>
-      {{ project.title }}
-    </div>
+    <div class="o-transition o-transition--left"></div>
+    <nav-main :project="true"></nav-main>
+    <section-project-header
+      :title="project.title"
+      :subtitle="project.subtitle"
+      :background="project.headerImg"
+    >
+    </section-project-header>
+    <section-project-meta
+      :year="project.year"
+      :client="project.client"
+      :techno="project.techno"
+      :description="project.description"
+      :link="project.linkToProject"
+    >
+    </section-project-meta>
+    <section-project-pictures
+      :pictures="project.pictures"
+    >
+    </section-project-pictures>
+    <section-project-footer
+      :previousLink="project.linkToPreviousProject"
+      :previousText="project.previousProject"
+      :nextLink="project.linkToNextProject"
+      :nextText="project.nextProject"
+    >
+    </section-project-footer>
   </div>
 </template>
 
 <script>
 import json from '@/assets/data/projects.json';
+import NavMain from '@/components/modules/nav/NavMain';
+import SectionProjectHeader from '@/components/modules/sections/SectionProjectHeader';
+import SectionProjectMeta from '@/components/modules/sections/SectionProjectMeta';
+import SectionProjectPictures from '@/components/modules/sections/SectionProjectPictures';
+import SectionProjectFooter from '@/components/modules/sections/SectionProjectFooter';
 
 export default {
   name: 'TheProjectPage',
   components: {
+    NavMain,
+    SectionProjectHeader,
+    SectionProjectMeta,
+    SectionProjectPictures,
+    SectionProjectFooter,
+  },
+  created() {
+    this.project = json.projects.find(item => item.link === this.$route.params.id);
   },
   data() {
     return {
@@ -24,7 +57,12 @@ export default {
     };
   },
   mounted() {
-    this.project = json.projects.find(item => item.link === this.$route.params.id);
+    window.scrollTo(0, 0);
+  },
+  watch: {
+    '$route'() { // eslint-disable-line object-shorthand
+      this.project = json.projects.find(item => item.link === this.$route.params.id);
+    },
   },
 };
 </script>
