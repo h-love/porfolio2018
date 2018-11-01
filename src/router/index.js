@@ -22,6 +22,22 @@ const scrollBehavior = (to, from, savedPosition) => {
     });
   }
 
+  if (from.name === 'theProjectPage' && to.name === 'theProjectPage') {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({ x: 0, y: 0 });
+      }, 500);
+    });
+  }
+
+  if (from.name === 'theHomePage' && to.name === 'theProjectPage') {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({ x: 0, y: 0 });
+      }, 500);
+    });
+  }
+
   if (to.hash) {
     return { selector: to.hash };
   }

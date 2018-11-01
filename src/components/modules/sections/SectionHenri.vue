@@ -1,15 +1,15 @@
 <template>
   <div class="p-sectionHenri">
     <div class="grid-x grid-margin-x grid-margin-y align-spaced">
-      <div class="cell small-5" ref="textBlock">
+      <div class="cell large-5 medium-6 small-12" ref="textBlock">
         <div class="p-sectionHenri__text" v-for="bloc in henriData.bloc" :key="bloc.id">
           <h2 class="p-sectionHenri__text__title u-noMargin">{{bloc.title}}</h2>
           <div v-html="bloc.text" class="p-sectionHenri__text__paragraph"></div>
         </div>
       </div>
-      <div class="cell small-5">
+      <div class="cell large-5">
         <img
-          class="p-sectionHenri__img"
+          class="p-sectionHenri__img show-for-large"
           ref="picture"
           src="@/assets/img/sectionHenri/overflowhidden.jpg"
         />

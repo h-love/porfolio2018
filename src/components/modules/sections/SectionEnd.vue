@@ -45,7 +45,8 @@ export default {
       this.$refs.heart.style.filter = `grayscale(${valueGrayscale}%)`;
       this.$refs.heart.style.opacity = `${valueOpacity}`;
 
-      if (scrollY >= document.body.clientHeight - window.innerHeight) {
+      const offset = 10;
+      if (scrollY >= document.body.clientHeight - window.innerHeight - offset) {
         this.$refs.heart.classList.add('active');
       } else {
         this.$refs.heart.classList.remove('active');

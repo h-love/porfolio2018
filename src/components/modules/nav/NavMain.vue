@@ -4,18 +4,56 @@
     <div class="p-navMain__content grid-container flex-container align-justify align-middle">
       <div>
         <router-link
+          v-scroll-to="{el: '#top'}"
           class="p-navMain__content__brand js-navItem"
           :class="{ active: !project }"
           data-id="top"
-          :to="project ? '/#top':'#top'">henri.love</router-link>
+          :to="project ? '/#top':'#top'"
+          @click.native="closeMenu()"
+        >henri.love</router-link>
       </div>
-      <div>
+      <div class="show-for-large">
         <router-link
           class="p-navMain__content__item js-navItem"
           v-for="item in nav"
+          v-scroll-to="item.link"
           :data-id="item.id"
           :key="item.id"
-          :to="item.link">{{item.text}}</router-link>
+          :to="$route.name === 'theHomePage' ?
+            item.link :
+            item.linkFromProject"
+        >
+          {{item.text}}
+        </router-link>
+      </div>
+      <div
+        class="p-navMain__content__hamburger u-clickable hide-for-large"
+        ref="hamburger"
+        @click="toggleMenu()"
+      >
+        <div class="p-navMain__content__hamburger__bar--top"></div>
+        <div class="p-navMain__content__hamburger__bar"></div>
+        <div class="p-navMain__content__hamburger__bar--bottom"></div>
+      </div>
+    </div>
+    <div
+      class="p-navMain__mobile flex-container align-center align-middle"
+      ref="mobileNav"
+    >
+      <div class="flex-container flex-dir-column">
+        <router-link
+          class="p-navMain__mobile__item"
+          v-scroll-to="item.link"
+          v-for="item in nav"
+          :data-id="item.id"
+          :key="item.id"
+          :to="$route.name === 'theHomePage' ?
+            item.link :
+            item.linkFromProject"
+          @click.native="toggleMenu()"
+        >
+          {{item.text}}
+        </router-link>
       </div>
     </div>
   </div>
@@ -34,17 +72,20 @@ export default {
         {
           id: 'projects',
           text: '/projects',
-          link: '/#projects',
+          link: '#projects',
+          linkFromProject: '/#projects',
         },
         {
           id: 'about',
           text: '/about',
-          link: '/#about',
+          link: '#about',
+          linkFromProject: '/#about',
         },
         {
           id: 'contact',
           text: '/contact',
-          link: '/#contact',
+          link: '#contact',
+          linkFromProject: '/#contact',
         },
       ],
     };
@@ -57,11 +98,13 @@ export default {
     handleScroll() {
       const nav = this.$refs.navMain;
       const navItems = document.getElementsByClassName('js-navItem');
-      if (this.project) {
+      if (this.project || window.innerWidth < 600) {
         if (scrollY) {
           nav.classList.add('active');
+          navItems[0].classList.remove('active');
         } else {
           nav.classList.remove('active');
+          navItems[0].classList.add('active');
         }
       } else {
         for (let i = 0; i < navItems.length; i += 1) {
@@ -80,6 +123,16 @@ export default {
           }
         }
       }
+    },
+    toggleMenu() {
+      document.body.classList.toggle('u-noScroll');
+      this.$refs.hamburger.classList.toggle('active');
+      this.$refs.mobileNav.classList.toggle('active');
+    },
+    closeMenu() {
+      document.body.classList.remove('u-noScroll');
+      this.$refs.hamburger.classList.remove('active');
+      this.$refs.mobileNav.classList.remove('active');
     },
   },
   destroyed() {

@@ -19,11 +19,6 @@
             "id": 4,
             "title": "henri.wants",
             "text": "To make amazing projects with you!"
-        },
-        {
-            "id": 6,
-            "title": "henri.resumé",
-            "text": "<a href='/static/cv_henrilove.pdf' target='_blank'>Download (pdf)</a>"
         }
     ]
 }

@@ -87,3 +87,70 @@
         &::after
           left: 0
           width: 100%
+
+    &__hamburger
+      $parent: &
+      position: relative
+      z-index: 100
+      height: 20px
+      width: 25.5px
+
+      &__bar
+        position: absolute
+        left: 0
+        top: 50%
+        width: inherit
+        height: 2px
+        background-color: var(--color-text)
+        border-radius: 5px
+        transform: translateY(-50%)
+        transition: opacity .2s ease-out, transform .2s ease-out
+
+        &--top,
+        &--bottom
+          position: absolute
+          content: ''
+          width: inherit
+          height: 2px
+          background-color: var(--color-text)
+          border-radius: 5px
+          transform-origin: right
+          transition: transform .2s ease-out
+
+        &--top
+          top: 0
+
+        &--bottom
+          bottom: 0
+
+      &.active
+        #{$parent}__bar
+          transform: translateX(-100%)
+          opacity: 0
+
+          &--top
+            transform: rotate(-45deg)
+
+          &--bottom
+            transform: rotate(45deg)
+
+  &__mobile
+    position: absolute
+    top: 0
+    left: 0
+    height: 100vh
+    width: 100vw
+    background-color: $pink
+    transform: translateX(100%)
+    transition: transform .2s ease-out
+
+    &.active
+      transform: translateX(0)
+
+    &__item
+      +font-size(36)
+      +line-height(36)
+      text-decoration: none
+      color: var(--color-text)
+
+

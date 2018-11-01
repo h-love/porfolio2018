@@ -30,7 +30,7 @@
         </div>
       </div>
       <div class="grid-x align-center">
-        <div class="p-sectionProjectMeta__content cell small-6">
+        <div class="p-sectionProjectMeta__content cell large-6 small-10">
           <p v-for="(paragraph, index) in description" :key="index" v-html="paragraph"></p>
         </div>
       </div>

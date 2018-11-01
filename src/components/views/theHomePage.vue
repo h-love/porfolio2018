@@ -50,9 +50,6 @@ export default {
   },
   mounted() {
     this.myp5 = new P5(sketch, document.getElementById('sketch'));
-    setTimeout(() => {
-      document.documentElement.style.scrollBehavior = 'smooth';
-    }, 500);
   },
   destroyed() {
     this.myp5.remove();

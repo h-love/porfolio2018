@@ -5,8 +5,7 @@
   z-index: -1
   height: 50vh
   width: 100vw
-  background-size: cover
-  background-position: center
+  background-color: $white
 
   &__back
     position: absolute
@@ -29,7 +28,15 @@
     +font-size(72)
     +line-height(72)
     font-family: var(--font-secondary)
-  
+
+    +bp-small
+      +font-size(36)
+      +line-height(36)
+
   &__subtitle
     +font-size(36)
     +line-height(36)
+
+    +bp-small
+      +font-size(24)
+      +line-height(24)

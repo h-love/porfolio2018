@@ -2,9 +2,13 @@
   <div class="p-sectionProjectFooter">
     <div class="grid-container">
       <div class="grid-x align-center">
-        <div class="cell small-10">
+        <div class="cell large-10 small-12">
           <div class="flex-container align-justify">
-            <router-link class="p-sectionProjectFooter__link" :to="previousLink">
+            <router-link
+              class="p-sectionProjectFooter__link"
+              :to="previousLink"
+              @click.native="isNext(false)"
+            >
               <div class="p-sectionProjectFooter__link__next">
                 previous_project
               </div>
@@ -14,7 +18,11 @@
                 </span>
               </div>
             </router-link>
-            <router-link class="p-sectionProjectFooter__link" :to="nextLink">
+            <router-link
+              class="p-sectionProjectFooter__link"
+              :to="nextLink"
+              @click.native="isNext(true)"
+            >
               <div class="p-sectionProjectFooter__link__next">
                 next_project
               </div>
@@ -37,12 +45,19 @@
   </div>
 </template>
 <script>
+import EventBus from '@/assets/js/bus';
+
 export default {
   props: {
     previousLink: String,
     previousText: String,
     nextLink: String,
     nextText: String,
+  },
+  methods: {
+    isNext(value) {
+      EventBus.$emit('is-next', value);
+    },
   },
 };
 </script>

@@ -2,7 +2,7 @@
     "projects": [
         {
             "id": 1,
-            "link": "testA",
+            "link": "apprentice_god",
             "image": "cardProject/apprentice_god_projectCard.mp4",
             "title": "Apprentice\u0020god",
             "subtitle": "interactive_movie",
@@ -12,32 +12,71 @@
             "client": "IMAC Engineering School",
             "headerImg": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
             "description": [
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                "Apprentice god is an interactive movie taking place in a near future where people can control each other with the help of biotechnology.",
+                "You are part of a show where you control Anna, a young woman who knows something that could have a great impact on the company where she works. What does she have to do? You have to decide!"
             ],
-            "linkToProject": "http://google.fr",
-            "linkToPreviousProject": "testD",
-            "previousProject": "AFI's\u0020top\u0020100",
-            "linkToNextProject": "testB",
-            "nextProject": "Cheval\u0020de\u0020Troie",
+            "linkToProject": "",
+            "linkToPreviousProject": "imac_logo",
+            "previousProject": "IMAC\u0020logo",
+            "linkToNextProject": "afi_top_100",
+            "nextProject": "AFI's\u0020top\u0020100",
             "pictures": [
                 {
-                    "src": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
-                    "text": "test"
+                    "src": "/static/img/projects/apprenticeGod/apprenticeGod01.png",
+                    "text": ""
                 },
                 {
-                    "src": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
-                    "text": "test"
+                    "src": "/static/img/projects/apprenticeGod/apprenticeGod02.png",
+                    "text": ""
                 },
                 {
-                    "src": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
-                    "text": "test"
+                    "src": "/static/img/projects/apprenticeGod/apprenticeGod03.png",
+                    "text": ""
+                },
+                {
+                    "src": "/static/img/projects/apprenticeGod/apprenticeGod04.png",
+                    "text": ""
                 }
             ]
         },
         {
             "id": 2,
-            "link": "testB",
+            "link": "afi_top_100",
+            "image": "cardProject/afi_projectCard.mp4",
+            "title": "AFI's\u0020top\u0020100",
+            "subtitle": "website",
+            "year": "2018",
+            "type": "school",
+            "techno": "VueJS",
+            "client": "IMAC Engineering School",
+            "headerImg": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
+            "description": [
+                "The American Film Institute has made a top 100 of the 20th century's best american movies. The website is a presentation of this list as if it was on a museum interface.",
+                "This website made with VueJS was a school project where I had to mix my knowledges about design, development and cinema."
+            ],
+            "linkToProject": "http://henri.love/hollywood",
+            "linkToPreviousProject": "apprentice_god",
+            "previousProject": "Apprentice\u0020god",
+            "linkToNextProject": "cheval_de_troie",
+            "nextProject": "Cheval\u0020de\u0020Troie",
+            "pictures": [
+                {
+                    "src": "/static/img/projects/afi/afi01.png",
+                    "text": ""
+                },
+                {
+                    "src": "/static/img/projects/afi/afi02.png",
+                    "text": ""
+                },
+                {
+                    "src": "/static/img/projects/afi/afi03.png",
+                    "text": ""
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "link": "cheval_de_troie",
             "image": "cardProject/chevaldetroie_projectCard.mp4",
             "title": "Cheval\u0020de\u0020Troie",
             "subtitle": "agency_website",
@@ -47,32 +86,36 @@
             "client": "Cheval de Troie",
             "headerImg": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
             "description": [
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                "Cheval de Troie is a parisian agency where I did a 3 months long internship. I've mainly worked on their new website celebrating the studio's 18th birthday.",
+                "It was an interesting project where I learnt everything about VueJS. The website had to be really well made in order to honor the studio's quality."
             ],
-            "linkToProject": "http://google.fr",
-            "linkToPreviousProject": "testA",
-            "previousProject": "Apprentice\u0020god",
-            "linkToNextProject": "testC",
+            "linkToProject": "https://chevaldetroie.net/",
+            "linkToPreviousProject": "afi_top_100",
+            "previousProject": "AFI's\u0020top\u0020100",
+            "linkToNextProject": "imac_logo",
             "nextProject": "IMAC\u0020logo",
             "pictures": [
                 {
-                    "src": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
-                    "text": "test"
+                    "src": "/static/img/projects/chevalDeTroie/chevalDeTroie01.png",
+                    "text": ""
                 },
                 {
-                    "src": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
-                    "text": "test"
+                    "src": "/static/img/projects/chevalDeTroie/chevalDeTroie02.png",
+                    "text": ""
                 },
                 {
-                    "src": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
-                    "text": "test"
+                    "src": "/static/img/projects/chevalDeTroie/chevalDeTroie03.png",
+                    "text": ""
+                },
+                {
+                    "src": "/static/img/projects/chevalDeTroie/chevalDeTroie04.png",
+                    "text": ""
                 }
             ]
         },
         {
-            "id": 3,
-            "link": "testC",
+            "id": 4,
+            "link": "imac_logo",
             "image": "cardProject/imac_projectCard.mp4",
             "title": "IMAC\u0020logo",
             "subtitle": "procedural_logo",
@@ -82,61 +125,26 @@
             "client": "IMAC Engineering School",
             "headerImg": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
             "description": [
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                "I've participated in the design of IMAC's new logo. It's a procedural logo meaning that it has many versions possible.",
+                "The idea was to symbolize the polyvalence and diversity that the school offers. The three arrows are made of triangles representing art, science and communication. A program was made with Processing so that people can generate their own logo."                
             ],
-            "linkToProject": "http://google.fr",
-            "linkToPreviousProject": "testB",
+            "linkToProject": "https://logo.ingenieur-imac.fr/",
+            "linkToPreviousProject": "cheval_de_troie",
             "previousProject": "Cheval\u0020de\u0020Troie",
-            "linkToNextProject": "testD",
-            "nextProject": "AFI's\u0020top\u0020100",
-            "pictures": [
-                {
-                    "src": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
-                    "text": "test"
-                },
-                {
-                    "src": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
-                    "text": "test"
-                },
-                {
-                    "src": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
-                    "text": "test"
-                }
-            ]
-        },
-        {
-            "id": 4,
-            "link": "testD",
-            "image": "cardProject/afi_projectCard.mp4",
-            "title": "AFI's\u0020top\u0020100",
-            "subtitle": "website",
-            "year": "2018",
-            "type": "school",
-            "techno": "VueJS",
-            "client": "My heart",
-            "headerImg": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
-            "description": [
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            ],
-            "linkToProject": "http://google.fr",
-            "linkToPreviousProject": "testC",
-            "previousProject": "IMAC\u0020logo",
-            "linkToNextProject": "testA",
+            "linkToNextProject": "apprentice_god",
             "nextProject": "Apprentice\u0020god",
             "pictures": [
                 {
-                    "src": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
-                    "text": "test"
+                    "src": "/static/img/projects/imacLogo/imacLogo01.png",
+                    "text": ""
                 },
                 {
-                    "src": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
-                    "text": "test"
+                    "src": "/static/img/projects/imacLogo/imacLogo02.png",
+                    "text": ""
                 },
                 {
-                    "src": "/static/img/projects/apprenticeGod/overflowhidden.jpg",
-                    "text": "test"
+                    "src": "/static/img/projects/imacLogo/imacLogo03.png",
+                    "text": ""
                 }
             ]
         }

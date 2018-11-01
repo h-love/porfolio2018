@@ -17,7 +17,12 @@
       playing in
       <span class="p-sectionLanding__txt--alt">Paris</span>
     </div>
-    <a class="p-sectionLanding__cta hoverable" ref="feelthelove" href="#projects">
+    <a 
+      class="p-sectionLanding__cta hoverable"
+      ref="feelthelove"
+      href="#projects"
+      v-scroll-to="{el: '#projects'}"
+    >
       <div class="p-sectionLanding__cta__txt">
         <span>f</span><span>e</span><span>e</span><span>l</span>
         <span>t</span><span>h</span><span>e</span>
@@ -47,11 +52,9 @@ export default {
     window.addEventListener('scroll', this.handleScroll, false);
     const element = this.$refs.arrow.getBoundingClientRect();
     this.firstArrowPosition = (
-      (-element.y
-      - ((3 * element.height) / 2)
-      - (element.height / 2))
-      - 60)
-      + (window.innerHeight / 2);
+      (-element.y - (2 * element.height))
+      + (window.innerHeight / 2)
+    );
   },
   methods: {
     handleMouseMove(event) {
@@ -83,6 +86,19 @@ export default {
         this.$refs.arrow.style.transform = '';
         this.$refs.feelthelove.classList.add('hoverable');
         this.$refs.feelthelove.classList.add('u-clickable');
+      }
+
+      if (window.innerWidth < 1024) {
+        const projects = document.getElementById('projects');
+        const about = document.getElementById('about');
+        const arrowPosition = utils.offset(this.$refs.arrow).top;
+        const start = utils.offset(projects).top;
+        const end = utils.offset(about).top + about.offsetHeight;
+        if (arrowPosition > start && arrowPosition < end) {
+          this.$refs.arrow.classList.add('u-invisible');
+        } else {
+          this.$refs.arrow.classList.remove('u-invisible');
+        }
       }
     },
   },

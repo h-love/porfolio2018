@@ -8,6 +8,10 @@
     +line-height(72)
     font-family: var(--font-secondary)
 
+    +bp-small
+      +font-size(36)
+      +line-height(36)
+
     &__txt
       &:first-child,
       &:nth-child(2)
@@ -28,6 +32,10 @@
   &__txt
     +font-size(30)
     +line-height(30)
+
+    +bp-small
+      +font-size(20)
+      +line-height(20)
 
     &--alt
       position: relative
@@ -68,7 +76,12 @@
 
     &__txt
       font-family: var(--font-secondary)
-      font-size: 36px
+      +font-size(36)
+      +line-height(36)
+
+      +bp-small
+        +font-size(24)
+        +line-height(24)
 
       span
         display: inline-block
@@ -93,7 +106,7 @@
         opacity: 1
         position: fixed
         transform: translate(-50%, 5px)
-        transition: transform .1s cubic-bezier(.81, .55, .77, 1.29)
+        transition: transform .1s cubic-bezier(.81, .55, .77, 1.29), opacity .5s ease-out
 
         &.active
           #{$parent}__tip

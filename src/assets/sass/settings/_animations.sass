@@ -54,15 +54,72 @@
   .o-transition--left
     transform: translateX(100%)
 
-
 .slide-from-right-enter-active,
 .slide-from-right-leave-active,
 .slide-from-left-enter-active,
 .slide-from-left-leave-active
-  transition-duration: .2s
+  transition-duration: .4s
 
   .o-transition--right,
   .o-transition--left
+    transition: transform .4s ease-out
+
+.slide-from-up-enter,
+.slide-from-up-leave-to
+  .o-transition--down,
+  .o-transition--up
+    transform: translateY(0)
+
+.slide-from-down-enter,
+.slide-from-down-leave-to
+  .o-transition--down,
+  .o-transition--up
+    transform: translateY(0)
+
+.slide-from-down-enter-to
+  .o-transition--down
+    transform: translateY(100%)
+  .o-transition--up
+    transform: translateY(-100%)
+
+.slide-from-up-enter-to
+  .o-transition--down
+    transform: translateY(100%)
+  .o-transition--up
+    transform: translateY(-100%)
+
+.slide-from-down-leave
+  .o-transition--down
+    transform: translateY(100%)
+
+  .o-transition--up
+    transform: translateY(-100%)
+
+.slide-from-up-leave
+  .o-transition--down
+    transform: translateY(-100%)
+
+  .o-transition--up
+    transform: translateY(100%)
+
+.slide-from-down-enter-active,
+.slide-from-down-leave-active,
+.slide-from-up-enter-active,
+.slide-from-up-leave-active
+  transition-duration: .4s
+
+  .o-transition--down,
+  .o-transition--up
     transition: transform .2s ease-out
 
+.slide-from-up-enter-active,
+.slide-from-up-leave-active
+  .o-transition--down
+    z-index: 10000
+    transition-delay: .2s
 
+.slide-from-down-enter-active,
+.slide-from-down-leave-active
+  .o-transition--up
+    z-index: 10000
+    transition-delay: .2s

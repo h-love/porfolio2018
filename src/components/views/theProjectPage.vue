@@ -1,6 +1,8 @@
 <template>
   <div class="theProjectPage">
     <div class="o-transition o-transition--left"></div>
+    <div class="o-transition o-transition--down"></div>
+    <div class="o-transition o-transition--up"></div>
     <nav-main :project="true"></nav-main>
     <section-project-header
       :title="project.title"
