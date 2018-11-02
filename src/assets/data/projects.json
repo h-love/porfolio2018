@@ -3,7 +3,7 @@
         {
             "id": 1,
             "link": "apprentice_god",
-            "image": "cardProject/apprentice_god_projectCard.mp4",
+            "video": "/static/video/cardProject/apprentice_god_projectCard.mp4",
             "title": "Apprentice\u0020god",
             "subtitle": "interactive_movie",
             "year": "2018",
@@ -42,7 +42,7 @@
         {
             "id": 2,
             "link": "afi_top_100",
-            "image": "cardProject/afi_projectCard.mp4",
+            "video": "/static/video/cardProject/afi_projectCard.mp4",
             "title": "AFI's\u0020top\u0020100",
             "subtitle": "website",
             "year": "2018",
@@ -77,7 +77,7 @@
         {
             "id": 3,
             "link": "cheval_de_troie",
-            "image": "cardProject/chevaldetroie_projectCard.mp4",
+            "video": "/static/video/cardProject/chevaldetroie_projectCard.mp4",
             "title": "Cheval\u0020de\u0020Troie",
             "subtitle": "agency_website",
             "year": "2017",
@@ -116,7 +116,7 @@
         {
             "id": 4,
             "link": "imac_logo",
-            "image": "cardProject/imac_projectCard.mp4",
+            "video": "/static/video/cardProject/imac_projectCard.mp4",
             "title": "IMAC\u0020logo",
             "subtitle": "procedural_logo",
             "year": "2017",

@@ -1,10 +1,6 @@
 <template>
   <div class="p-sectionLanding">
-    <h1 class="p-sectionLanding__title u-noMargin">
-      <span class="p-sectionLanding__title__txt js-movingTitle">henri.love</span>
-      <span class="p-sectionLanding__title__txt js-movingTitle">henri.love</span>
-      <span class="p-sectionLanding__title__txt">henri.love</span>
-    </h1>
+    <title-main title="henri.love"></title-main>
     <div class="p-sectionLanding__txt u-noMargin">
       <span class="p-sectionLanding__txt--alt">creative engineer</span>
       since 2018
@@ -17,7 +13,7 @@
       playing in
       <span class="p-sectionLanding__txt--alt">Paris</span>
     </div>
-    <a 
+    <a
       class="p-sectionLanding__cta hoverable"
       ref="feelthelove"
       href="#projects"
@@ -39,16 +35,19 @@
 </template>
 <script>
 import utils from '@/assets/js/utils';
+import TitleMain from '@/components/modules/titles/TitleMain';
 
 export default {
   name: 'SectionLanding',
+  components: {
+    TitleMain,
+  },
   data() {
     return {
       firstArrowPosition: 0,
     };
   },
   mounted() {
-    window.addEventListener('mousemove', this.handleMouseMove, false);
     window.addEventListener('scroll', this.handleScroll, false);
     const element = this.$refs.arrow.getBoundingClientRect();
     this.firstArrowPosition = (
@@ -57,17 +56,6 @@ export default {
     );
   },
   methods: {
-    handleMouseMove(event) {
-      const elements = document.getElementsByClassName('js-movingTitle');
-
-      const valueX0 = utils.mapRange(event.clientX, 0, window.innerWidth, 45, 55);
-      const valueX1 = utils.mapRange(event.clientX, 0, window.innerWidth, 55, 45);
-      const valueY0 = utils.mapRange(event.clientY, 0, window.innerHeight, -20, 20);
-      const valueY1 = utils.mapRange(event.clientY, 0, window.innerHeight, 20, -20);
-
-      elements[0].style.transform = `translate(-${valueX0}%, ${valueY0}%)`;
-      elements[1].style.transform = `translate(-${valueX1}%, ${valueY1}%)`;
-    },
     handleScroll() {
       if (scrollY) {
         const valueY = utils.mapRange(

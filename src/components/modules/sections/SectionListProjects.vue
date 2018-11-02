@@ -5,7 +5,7 @@
            :key="project.id"
            class="cell large-5 medium-7 small-12">
         <card-project
-          :image-bkg="project.image"
+          :video-bkg="project.video"
           :project-link="project.link"
           :project-title="project.title"
           :project-subtitle="project.subtitle"

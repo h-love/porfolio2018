@@ -45,6 +45,7 @@ const scrollBehavior = (to, from, savedPosition) => {
   return { x: 0, y: 0 };
 };
 
+
 export default new Router({
   mode: 'history',
   scrollBehavior,
@@ -53,6 +54,7 @@ export default new Router({
       path: '/',
       name: 'theHomePage',
       component: theHomePage,
+      meta: { preload: true },
     },
     {
       path: '/project/:id',

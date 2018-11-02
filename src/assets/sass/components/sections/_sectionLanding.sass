@@ -3,32 +3,6 @@
   text-align: center
   z-index: 100
 
-  &__title
-    +font-size(72)
-    +line-height(72)
-    font-family: var(--font-secondary)
-
-    +bp-small
-      +font-size(36)
-      +line-height(36)
-
-    &__txt
-      &:first-child,
-      &:nth-child(2)
-        left: 50%
-        opacity: .2
-        position: absolute
-        transform: translateX(-50%)
-
-      &:first-child
-        color: blue
-
-      &:nth-child(2)
-        color: red
-
-      &:last-child
-        position: relative
-
   &__txt
     +font-size(30)
     +line-height(30)

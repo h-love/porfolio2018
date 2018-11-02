@@ -8,7 +8,12 @@
             v-for="(image, index) in pictures"
             :key="index"
           >
-            <div v-if="image.text" class="p-sectionProjectPictures__item__text">{{image.text}} :</div>
+            <div
+              v-if="image.text"
+              class="p-sectionProjectPictures__item__text"
+            >
+              {{image.text}} :
+            </div>
             <img class="p-sectionProjectPictures__item__image" :src="image.src" />
           </div>
         </div>

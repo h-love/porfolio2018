@@ -1,0 +1,26 @@
+.p-titleMain
+  position: relative
+  text-align: center
+
+  &__txt
+    +font-size(72)
+    +line-height(72)
+    font-family: var(--font-secondary)
+
+    +bp-small
+      +font-size(36)
+      +line-height(36)
+
+    &:first-child,
+    &:nth-child(2)
+      left: 50%
+      opacity: .2
+      position: absolute
+      transform: translateX(-50%)
+      width: 100%
+
+    &:first-child
+      color: blue
+
+    &:nth-child(2)
+      color: red

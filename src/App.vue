@@ -1,8 +1,10 @@
 <template>
   <div id="app">
     <transition :name="this.transitionName" mode="out-in">
-      <router-view v-if="$route.name === 'theProjectPage'" :key="$route.fullPath"></router-view>
-      <router-view v-else></router-view>
+      <keep-alive>
+        <router-view v-if="$route.name === 'theProjectPage'" :key="$route.fullPath"></router-view>
+        <router-view v-else></router-view>
+      </keep-alive>
     </transition>
   </div>
 </template>

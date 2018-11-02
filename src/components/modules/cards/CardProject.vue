@@ -1,7 +1,7 @@
 <template>
   <div class="p-cardProject" ref="card" @click="scrollUnset()">
     <router-link :to="'/project/' + projectLink">
-      <video class="p-cardProject__video" ref="video" :src="imagePath" loop muted></video>
+      <video class="p-cardProject__video" ref="video" :src="videoBkg" loop muted></video>
       <div class="p-cardProject__filter"></div>
       <div class="p-cardProject__content" ref="cardContent">
         <h2 class="p-cardProject__content__title u-noMargin">
@@ -22,7 +22,7 @@
 export default {
   name: 'CardProject',
   props: {
-    imageBkg: String,
+    videoBkg: String,
     projectLink: String,
     projectTitle: String,
     projectSubtitle: String,
@@ -32,14 +32,11 @@ export default {
   },
   data() {
     return {
-      imagePath: '',
       hsl: 30,
       interval: '',
     };
   },
   mounted() {
-    this.imagePath = require(`../../../assets/video/${this.imageBkg}`); // eslint-disable-line global-require, import/no-dynamic-require
-
     window.addEventListener('resize', this.handleResize, false);
     this.$refs.card.addEventListener('mouseenter', this.handleMouseenter, false);
     this.$refs.card.addEventListener('mouseleave', this.handleMouseleave, false);

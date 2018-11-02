@@ -1,9 +1,11 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
+import { sync } from 'vuex-router-sync';
 import VueScrollTo from 'vue-scrollto';
 import App from './App';
 import router from './router';
+import store from './store';
 
 Vue.use(VueScrollTo, {
   container: 'body',
@@ -18,12 +20,26 @@ Vue.use(VueScrollTo, {
   x: false,
   y: true,
 });
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(m => m.meta.preload) && from.name !== 'theProjectPage' && from.name !== to.name) {
+    store.dispatch('beginPreload');
+    next();
+  } else {
+    store.dispatch('endPreload');
+    next();
+  }
+});
+
 Vue.config.productionTip = false;
+
+sync(store, router);
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>',
 });
