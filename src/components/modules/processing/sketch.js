@@ -93,8 +93,8 @@ export default (sketch) => {
   }
 
   sketch.setup = () => { // eslint-disable-line no-param-reassign
-    width = document.getElementById('sketch').clientWidth;
-    height = document.getElementById('sketch').clientHeight;
+    width = window.innerWidth;
+    height = window.innerHeight;
     sketch.createCanvas(width, height);
     rects = [];
     rectsEnd = [];
