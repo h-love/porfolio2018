@@ -56,7 +56,6 @@ export default {
     this.myp5 = new P5(sketch, document.getElementById('sketch'));
   },
   activated() {
-    this.myp5 = new P5(sketch, document.getElementById('sketch'));
     for (let i = 0; i < json.projects.length; i += 1) {
       for (let j = 0; j < json.projects[i].pictures.length; j += 1) {
         const img = new Image();
@@ -66,12 +65,13 @@ export default {
       req.open('GET', json.projects[i].video, true);
       req.responseType = 'blob';
       req.send();
-      req.onload = () => {
-        if (i === json.projects.length - 1) {
-          this.$nextTick(() => {
-            this.$store.dispatch('endPreload');
-          });
-        }
+
+      const transition = new Image();
+      transition.src = '/static/transition.gif';
+      transition.onload = () => {
+        this.$nextTick(() => {
+          this.$store.dispatch('endPreload');
+        });
       };
     }
   },
