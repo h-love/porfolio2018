@@ -8,7 +8,7 @@
           class="p-navMain__content__brand js-navItem"
           :class="{ active: !project }"
           data-id="top"
-          :to="project ? '/#top':'#top'"
+          to="/"
           @click.native="closeMenu()"
         >henri.love</router-link>
       </div>
@@ -109,9 +109,9 @@ export default {
       } else {
         for (let i = 0; i < navItems.length; i += 1) {
           const element = document.getElementById(navItems[i].getAttribute('data-id'));
-          const top = utils.offset(element).top;
+          const top = element ? utils.offset(element).top : null;
           const scroll = scrollY + nav.offsetHeight;
-          if (top <= scroll && top + element.offsetHeight > scroll) {
+          if (element && top <= scroll && top + element.offsetHeight > scroll) {
             if (i) {
               nav.classList.add('active');
             } else {

@@ -10,7 +10,6 @@ const noise = () => {
   const noiseData = [];
   let frame = 0;
   let loopTimeout;
-  canvasbody = document.getElementById('noise');
   // Create Noise
   const createNoise = () => {
     const idata = ctx.createImageData(wWidth, wHeight);
@@ -65,7 +64,6 @@ const noise = () => {
   // Init
   const init = (() => { // eslint-disable-line no-unused-vars
     canvasbody = document.getElementById('noise');
-    ctx = null;
     ctx = canvasbody.getContext('2d');
     setup();
   })();
@@ -75,6 +73,17 @@ export default {
   name: 'TextureNoise',
   mounted() {
     noise();
+  },
+  methods: {
+    destroyCanvas() {
+      const element = document.getElementById('noise');
+      element.remove();
+    },
+  },
+  destroyed() {
+    setTimeout(() => {
+      this.destroyCanvas();
+    }, 300);
   },
 };
 </script>

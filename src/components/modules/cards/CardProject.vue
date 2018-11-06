@@ -1,7 +1,20 @@
 <template>
   <div class="p-cardProject" ref="card" @click="scrollUnset()">
     <router-link :to="'/project/' + projectLink">
-      <video class="p-cardProject__video" ref="video" :src="videoBkg" loop muted></video>
+      <div
+        v-if="isMobile"
+        class="p-cardProject__img"
+        :style="{ 'background-image': 'url(' + videoPoster + ')' }"
+      >
+      </div>
+      <video
+        v-else
+        class="p-cardProject__video"
+        ref="video"
+        :src="videoBkg"
+        loop
+        muted>
+      </video>
       <div class="p-cardProject__filter"></div>
       <div class="p-cardProject__content" ref="cardContent">
         <h2 class="p-cardProject__content__title u-noMargin">
@@ -23,6 +36,7 @@ export default {
   name: 'CardProject',
   props: {
     videoBkg: String,
+    videoPoster: String,
     projectLink: String,
     projectTitle: String,
     projectSubtitle: String,
@@ -34,9 +48,14 @@ export default {
     return {
       hsl: 30,
       interval: '',
+      isMobile: false,
     };
   },
   mounted() {
+    if (window.innerWidth < 650) {
+      this.isMobile = true;
+    }
+
     window.addEventListener('resize', this.handleResize, false);
     this.$refs.card.addEventListener('mouseenter', this.handleMouseenter, false);
     this.$refs.card.addEventListener('mouseleave', this.handleMouseleave, false);

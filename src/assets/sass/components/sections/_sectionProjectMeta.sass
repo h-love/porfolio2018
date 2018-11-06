@@ -2,6 +2,8 @@
   background-color: $pink
   margin-top: 50vh
   padding: 20px 0
+  position: relative
+  z-index: 10
 
   &__header
     +bp-small
@@ -39,6 +41,9 @@
 
     &:hover
       span
+        color: $red
+        transition: color .1s linear
+        +stagger-transitions(.01, 0, 20)
         animation: .5s bounce infinite
         @for $i from 0 through 6
           &:nth-child(#{$i+1})

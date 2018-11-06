@@ -3,9 +3,10 @@
     <div class="grid-x grid-margin-x grid-margin-y align-spaced">
       <div v-for="project in projectsData.projects"
            :key="project.id"
-           class="cell large-5 medium-7 small-12">
+           class="cell large-5 medium-7 small-10">
         <card-project
           :video-bkg="project.video"
+          :video-poster="project.video_poster"
           :project-link="project.link"
           :project-title="project.title"
           :project-subtitle="project.subtitle"

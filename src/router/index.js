@@ -6,6 +6,8 @@ import theProjectPage from '@/components/views/theProjectPage';
 Vue.use(Router);
 
 const scrollBehavior = (to, from, savedPosition) => {
+  if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+
   if (from.name === 'theProjectPage' && savedPosition) {
     return new Promise((resolve) => {
       setTimeout(() => {
@@ -38,6 +40,15 @@ const scrollBehavior = (to, from, savedPosition) => {
     });
   }
 
+  if (from.name === 'theProjectPage' && to.name === 'theHomePage') {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({ x: 0, y: 0 });
+      }, 500);
+    });
+  }
+
+
   if (to.hash) {
     return { selector: to.hash };
   }
@@ -60,6 +71,7 @@ export default new Router({
       path: '/project/:id',
       name: 'theProjectPage',
       component: theProjectPage,
+      meta: { preload: true },
     },
   ],
 });

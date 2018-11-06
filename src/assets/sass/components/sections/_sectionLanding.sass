@@ -34,11 +34,11 @@
         transform: translate(-50%, 0)
 
       #{$parent}__img__arrow__tip
-        fill: red
+        fill: $red
 
       #{$parent}__txt
         span
-          color: red
+          color: $red
           animation: .5s bounce infinite
 
           @for $i from 0 through 10
@@ -46,7 +46,7 @@
               animation-delay: $i * .02s
 
       #{$parent}__img + #{$parent}__txt
-        background-color: red
+        background-color: $red
 
     &__txt
       font-family: var(--font-secondary)
@@ -84,7 +84,7 @@
 
         &.active
           #{$parent}__tip
-            fill: red
+            fill: $red
         &__tip
           fill: rgba(0, 0, 0, 0)
           transition: fill .1s cubic-bezier(.81, .55, .77, 1.29)

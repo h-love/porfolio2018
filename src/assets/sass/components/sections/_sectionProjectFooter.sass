@@ -5,7 +5,15 @@
   z-index: -1
   height: 50vh
   width: 100vw
-  background-color: $pink
+
+  &__pinkBkg
+    position: fixed
+    bottom: 0
+    left: 0
+    z-index: -1
+    height: inherit
+    width: inherit
+    background-color: $pink
 
   &__link
     $parent: &
@@ -16,6 +24,9 @@
     &:hover
       #{$parent}__title
         span
+          color: $red
+          transition: color .1s linear
+          +stagger-transitions(.01, 0, 20)
           animation: .5s bounce infinite
           @for $i from 0 through 20
             &:nth-child(#{$i+1})

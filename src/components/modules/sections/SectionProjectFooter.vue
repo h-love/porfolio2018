@@ -1,5 +1,6 @@
 <template>
   <div class="p-sectionProjectFooter">
+    <div class="p-sectionProjectFooter__pinkBkg"></div>
     <div class="grid-container">
       <div class="grid-x align-center">
         <div class="cell large-10 small-12">
@@ -42,17 +43,23 @@
     >
       back to projects
     </router-link>
+    <!-- <texture-noise></texture-noise> -->
   </div>
 </template>
 <script>
 import EventBus from '@/assets/js/bus';
+import TextureNoise from '@/components/modules/textures/TextureNoise';
 
 export default {
+  name: 'SectionProjectFooter',
   props: {
     previousLink: String,
     previousText: String,
     nextLink: String,
     nextText: String,
+  },
+  components: {
+    TextureNoise,
   },
   methods: {
     isNext(value) {

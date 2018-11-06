@@ -49,6 +49,7 @@ export default {
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll, false);
+    this.handleScroll();
     const element = this.$refs.arrow.getBoundingClientRect();
     this.firstArrowPosition = (
       (-element.y - (2 * element.height))
@@ -66,9 +67,9 @@ export default {
           this.firstArrowPosition,
         );
         this.$refs.arrow.classList.add('active');
-        this.$refs.arrow.style.transform = `translate(-50%, ${valueY}px)`;
         this.$refs.feelthelove.classList.remove('hoverable');
         this.$refs.feelthelove.classList.remove('u-clickable');
+        this.$refs.arrow.style.transform = `translate(-50%, ${valueY}px)`;
       } else {
         this.$refs.arrow.classList.remove('active');
         this.$refs.arrow.style.transform = '';

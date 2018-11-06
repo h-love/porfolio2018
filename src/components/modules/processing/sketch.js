@@ -114,17 +114,19 @@ export default (sketch) => {
       );
     }
 
+    let orientationIncrement = 0;
     for (let i = 0; i < 10; i += 1) {
       rectsEnd[i] = new Rect(
         width / 2,
         height / 2,
         width / 2,
         height / 2,
-        sketch.random(0, 360),
+        orientationIncrement,
         i % 2 === 0 ? -1 : 1,
         0.25,
         i % 2 === 0 ? sketch.color(255, 0, 0, 0) : sketch.color(0, 0, 255, 0),
       );
+      orientationIncrement += 36;
     }
 
     for (let i = 0; i < itemPerLine; i += 1) {
@@ -150,6 +152,7 @@ export default (sketch) => {
   };
 
   sketch.draw = () => { // eslint-disable-line no-param-reassign
+    sketch.refreshUpdatePosition();
     sketch.background(255);
     for (let i = 0; i < rects.length; i += 1) {
       rects[i].update();
@@ -162,8 +165,11 @@ export default (sketch) => {
         rectsEnd[i].update();
         rectsEnd[i].display();
       }
+    }
+
+    if (scrollY >= document.body.clientHeight - window.innerHeight - 10) {
       for (let i = 0; i < stars.length; i += 1) {
-        stars[i].updateColorAlpha(sketch.map(scrollY, ScrollBegin, ScrollEnd, 0, 100));
+        stars[i].updateColorAlpha(100);
         stars[i].update();
         stars[i].display();
       }
@@ -171,6 +177,14 @@ export default (sketch) => {
   };
 
   sketch.mouseMoved = () => { // eslint-disable-line no-param-reassign
+    sketch.refreshUpdatePosition();
+  };
+
+  sketch.windowResized = () => { // eslint-disable-line no-param-reassign
+    sketch.setup();
+  };
+
+  sketch.refreshUpdatePosition = () => { // eslint-disable-line no-param-reassign
     for (let i = 0; i < rects.length; i += 1) {
       if (i % 2 === 0) {
         rects[i].updatePosition(
@@ -184,9 +198,5 @@ export default (sketch) => {
         );
       }
     }
-  };
-
-  sketch.windowResized = () => { // eslint-disable-line no-param-reassign
-    sketch.setup();
   };
 };

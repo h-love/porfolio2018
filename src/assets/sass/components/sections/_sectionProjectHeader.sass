@@ -5,7 +5,24 @@
   z-index: -1
   height: 50vh
   width: 100vw
-  background-color: $white
+  background-color: $pink
+
+  &__image,
+  &__pinkBkg
+    position: fixed
+    top: 0
+    left: 0
+    height: inherit
+    width: inherit
+
+  &__image
+    background-size: cover
+    background-position: center
+    filter: grayscale(100)
+
+  &__pinkBkg
+    background-color: $pink
+    opacity: .95
 
   &__back
     position: absolute

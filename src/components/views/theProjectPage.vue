@@ -29,6 +29,7 @@
       :nextText="project.nextProject"
     >
     </section-project-footer>
+    <texture-noise></texture-noise>
   </div>
 </template>
 
@@ -39,6 +40,7 @@ import SectionProjectHeader from '@/components/modules/sections/SectionProjectHe
 import SectionProjectMeta from '@/components/modules/sections/SectionProjectMeta';
 import SectionProjectPictures from '@/components/modules/sections/SectionProjectPictures';
 import SectionProjectFooter from '@/components/modules/sections/SectionProjectFooter';
+import TextureNoise from '@/components/modules/textures/TextureNoise';
 
 export default {
   name: 'TheProjectPage',
@@ -48,6 +50,7 @@ export default {
     SectionProjectMeta,
     SectionProjectPictures,
     SectionProjectFooter,
+    TextureNoise,
   },
   created() {
     this.project = json.projects.find(item => item.link === this.$route.params.id);
@@ -57,9 +60,6 @@ export default {
       id: this.$route.params.id,
       project: {},
     };
-  },
-  mounted() {
-    window.scrollTo(0, 0);
   },
   watch: {
     '$route'() { // eslint-disable-line object-shorthand

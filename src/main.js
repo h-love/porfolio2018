@@ -22,7 +22,7 @@ Vue.use(VueScrollTo, {
 });
 
 router.beforeEach((to, from, next) => {
-  if (to.matched.some(m => m.meta.preload) && from.name !== 'theProjectPage' && from.name !== to.name) {
+  if (to.matched.some(m => m.meta.preload) && from.name !== 'theProjectPage' && from.name !== to.name && from.name === null) {
     store.dispatch('beginPreload');
     next();
   } else {
