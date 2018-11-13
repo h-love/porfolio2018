@@ -13,7 +13,7 @@
       <div>
           Follow ~ <a class="p-sectionEnd__social__link" href="https://github.com/h-love" target="_blank">Github</a>
           .
-          <a class="p-sectionEnd__social__link" href="https://www.instagram.com/h.astrnfl/" target="_blank">Instagram</a>
+          <a class="p-sectionEnd__social__link" href="https://www.instagram.com/henri.love_/" target="_blank">Instagram</a>
       </div>
     </div>
   </div>
